@@ -1,23 +1,43 @@
 {
-  "name": "flexible",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GitHubJian/flexible.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GitHubJian/flexible/issues"
-  },
-  "homepage": "https://github.com/GitHubJian/flexible#readme"
+    "name": "flexible",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "init": "rm -rf node_modules package-lock.json && npm install",
+        "clean": "rm -fr dist",
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "tsc -p src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GitHubJian/flexible.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/GitHubJian/flexible/issues"
+    },
+    "homepage": "https://github.com/GitHubJian/flexible#readme",
+    "dependencies": {
+        "css": "3.0.0",
+        "loader-utils": "2.0.0",
+        "safe-require": "1.0.4"
+    },
+    "devDependencies": {
+        "@types/css": "0.0.31",
+        "@types/loader-utils": "2.0.2",
+        "@types/node": "15.9.0",
+        "@types/webpack": "^4.0.0",
+        "typescript": "4.3.2",
+        "uglify-js": "3.13.8"
+    },
+    "peerDependencies": {
+        "html-webpack-plugin": "5.3.1"
+    }
 }
